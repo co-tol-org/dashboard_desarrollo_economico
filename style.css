@@ -1,0 +1,140 @@
+:root {
+    /* Nueva Paleta de Cultura (Tonos Rosados/Magenta) */
+    --tolima-primary: #ffff86(55 2% 4%);         /* Amarillo vibrante principal */
+    --tolima-primary-dark: #f2bf19;    /* Amarillo oscuro para bordes/sombras */
+    --tolima-accent: #d8bf1b;          /* Acento principal */
+    --tolima-accent-light: #fcf8e4;    /* Amarillo muy claro para fondos de mensajes */
+    --tolima-primary-pale: #fffff0;    /* Amarillo pálido para el fondo del input */
+    --tolima-secondary: #f2f213;       /* Color secundario */
+    
+    --bg-body: #fafaf5;                /* Fondo general con un levísimo toque cálido */
+    --surface: #ffffff;
+    --text-primary: #dfce3a;           /* Texto oscuro con tinte amarrillo/cafe */
+    --text-secondary: #e0e057;
+    --border-color: #e2e0d4;
+    
+    --shadow-md: 0 4px 6px -1px rgba(192, 192, 16, 0.1), 0 2px 4px -1px rgba(173, 147, 20, 0.06);
+    --shadow-header: 0 4px 20px rgba(216, 188, 27, 0.15);
+}
+
+* { box-sizing: border-box; }
+
+body, html {
+    margin: 0; padding: 0; height: 100vh;
+    font-family: 'Inter', sans-serif; background-color: var(--bg-body);
+    overflow: hidden; display: flex; flex-direction: column;
+}
+
+/* HEADER */
+.app-header {
+    height: 72px; background: #fcfce8; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; box-shadow: var(--shadow-header); z-index: 50; position: relative; border-bottom: 3px solid var(--tolima-accent);
+}
+.branding { display: flex; align-items: center; gap: 16px; }
+.escudo-img { height: 60px; width: 165px; display: flex; align-items: center; justify-content: center; }
+.titles { display: flex; flex-direction: column; justify-content: center; }
+.main-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--tolima-primary); text-transform: uppercase; line-height: 1.1; }
+.sub-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; color: var(--tolima-secondary); text-transform: uppercase; margin-top: 2px; }
+.header-info { display: flex; align-items: center; gap: 20px; }
+.system-status { display: flex; align-items: center; gap: 8px; background: rgba(216, 213, 27, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: var(--tolima-primary-dark); border: 1px solid rgba(216, 27, 96, 0.2); }
+.status-indicator { width: 8px; height: 8px; background-color: var(--tolima-primary); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(216, 191, 27, 0.4); } 50% { box-shadow: 0 0 0 6px rgba(216, 216, 27, 0); } 100% { box-shadow: 0 0 0 0 rgba(216, 216, 27, 0); } }
+
+/* LAYOUT PRINCIPAL (PC) */
+.main-layout { display: flex; flex: 1; height: calc(100vh - 72px); width: 100%; overflow: hidden; background-color: var(--bg-body); }
+
+/* DASHBOARD PANEL */
+.dashboard-panel { flex: 1; position: relative; background: #ffffff; margin: 16px; margin-right: 0; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); overflow: auto; display: flex; flex-direction: column; }
+.iframe-wrapper { width: 100%; height: 100%; position: relative; z-index: 1; }
+.iframe-wrapper iframe { width: 100%; height: 100%; border: none; }
+.dashboard-loader { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; z-index: 0; color: var(--text-secondary); }
+.spinner { width: 40px; height: 40px; border: 3px solid var(--tolima-accent-light); border-top-color: var(--tolima-accent); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 12px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* CHAT PANEL (TU DISEÑO PERSONALIZADO) */
+.chat-panel { width: 300px; min-width: 280px; display: flex; flex-direction: column; background: transparent; padding: 16px; }
+.chat-card { background: var(--surface); flex: 1; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; position: relative; }
+.chat-header { background: var(--tolima-primary); padding: 16px 20px; color: white; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--tolima-primary-dark); }
+.assistant-profile { display: flex; align-items: center; gap: 12px; }
+.avatar-circle { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.4); }
+.avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+.assistant-details h2 { margin: 0; font-size: 0.95rem; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+.assistant-details span { font-size: 0.75rem; opacity: 0.9; font-weight: 300; }
+.btn-reset { background: rgba(255, 255, 255, 0.15); border: none; color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.btn-reset:hover { background: var(--tolima-primary-dark); transform: rotate(-15deg); }
+.messenger-wrapper { flex: 1; position: relative; background: #fff; }
+
+/* CONFIGURACIÓN DF-MESSENGER */
+df-messenger {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;
+    
+    --df-messenger-font-color: var(--text-primary);
+    --df-messenger-font-family: 'Inter', sans-serif;
+    
+    /* --- AQUÍ ESTÁ LA MAGIA PARA DESAPARECER LA PALABRA "AMAIA" --- */
+    --df-messenger-titlebar-display: none; 
+    --df-messenger-titlebar-title-font-size: 0px;
+    --df-messenger-titlebar-padding: 0px;
+    --df-messenger-titlebar-height: 0px;
+    --df-messenger-header-height: 0px;
+    /* ------------------------------------------------------------- */
+    
+    --df-messenger-chat-background: #ffffff;
+    --df-messenger-message-user-background: var(--tolima-primary);
+    --df-messenger-message-user-font-color: #ffffff;
+    --df-messenger-message-bot-background: var(--tolima-accent-light);
+    --df-messenger-message-bot-font-color: var(--text-primary);
+    --df-messenger-input-background: var(--tolima-primary-pale);
+}
+
+/* BOTÓN FLOTANTE (Oculto en PC por defecto) */
+.chat-toggle-btn { display: none; }
+
+
+/* =========================================
+   DISEÑO PARA CELULARES (BOTÓN FLOTANTE)
+========================================= */
+@media (max-width: 1024px) {
+    .app-header { height: auto; padding: 10px 15px; flex-wrap: wrap; }
+    .escudo-img { height: 45px; }
+    .main-title { font-size: 0.85rem; line-height: 1.2; }
+    .sub-title, .header-info { display: none !important; }
+
+    /* El Dashboard ocupa todo el espacio */
+    .dashboard-panel {
+        width: 100%; height: calc(100vh - 65px) !important; margin: 0; border-radius: 0; border: none;
+        overflow: auto !important; -webkit-overflow-scrolling: touch;
+    }
+    .iframe-wrapper {
+        width: 1200px !important; min-width: 1200px !important; 
+        height: 800px !important; min-height: 800px !important;
+    }
+
+    /* 1. Muestra el botón flotante en la esquina inferior */
+    .chat-toggle-btn {
+        display: flex; position: fixed; bottom: 20px; right: 20px;
+        width: 60px; height: 60px; border-radius: 50%;
+        background: #ffffff; border: 3px solid var(--tolima-accent);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); z-index: 1000;
+        cursor: pointer; align-items: center; justify-content: center;
+        padding: 0; overflow: hidden; transition: transform 0.2s;
+    }
+    .chat-toggle-btn img { width: 100%; height: 100%; object-fit: cover; }
+    .chat-toggle-btn:active { transform: scale(0.9); }
+
+    /* 2. Convierte el panel de chat en una ventana emergente oculta */
+    .chat-panel {
+        position: fixed; bottom: 90px; right: 20px;
+        width: calc(100% - 40px); max-width: 380px; height: 500px;
+        padding: 0; margin: 0; z-index: 999;
+        
+        /* Efecto de esconder / mostrar */
+        opacity: 0; pointer-events: none;
+        transform: translateY(20px); transition: all 0.3s ease;
+    }
+    
+    /* 3. Clase activa que se enciende con el botón */
+    .chat-panel.open {
+        opacity: 1; pointer-events: auto; transform: translateY(0);
+    }
+}
