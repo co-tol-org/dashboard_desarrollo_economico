@@ -13,7 +13,7 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'frontend-dashboard-Economico' # Nombre del nuevo servicio en Cloud Run
+      - 'frontend-dashboard-economico' # Nombre del nuevo servicio en Cloud Run
       - '--image'
       - 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-economico:$COMMIT_SHA'
       - '--region'
@@ -30,4 +30,4 @@ options:
 
 # Imágenes que se guardarán
 images:
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-Economico:$COMMIT_SHA'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-economico:$COMMIT_SHA'
