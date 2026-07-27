@@ -1,11 +1,11 @@
 steps:
   # 1. Construir la imagen del contenedor
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-Economico:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-economico:$COMMIT_SHA', '.']
 
   # 2. Subir la imagen a Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-Economico:$COMMIT_SHA']
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/frontend-dashboard/frontend-dashboard-economico:$COMMIT_SHA']
 
   # 3. Desplegar en Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
