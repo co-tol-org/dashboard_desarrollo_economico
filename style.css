@@ -37,7 +37,7 @@ body, html {
 .sub-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; color: var(--tolima-secondary); text-transform: uppercase; margin-top: 2px; }
 .header-info { display: flex; align-items: center; gap: 20px; }
 .system-status { display: flex; align-items: center; gap: 8px; background: rgba(216, 213, 27, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: var(--tolima-primary-dark); border: 1px solid rgba(216, 27, 96, 0.2); }
-.status-indicator { width: 8px; height: 8px; background-color: var(--tolima-primary); border-radius: 50%; animation: pulse 2s infinite; }
+.status-indicator { width: 8px; height: 8px; background-color: #00e5ff; border-radius: 50%; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(216, 191, 27, 0.4); } 50% { box-shadow: 0 0 0 6px rgba(216, 216, 27, 0); } 100% { box-shadow: 0 0 0 0 rgba(216, 216, 27, 0); } }
 
 /* LAYOUT PRINCIPAL (PC) */
