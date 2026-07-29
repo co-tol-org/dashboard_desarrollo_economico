@@ -33,7 +33,7 @@ body, html {
 .branding { display: flex; align-items: center; gap: 16px; }
 .escudo-img { height: 60px; width: 165px; display: flex; align-items: center; justify-content: center; }
 .titles { display: flex; flex-direction: column; justify-content: center; }
-.main-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: #F2C94C; text-transform: uppercase; line-height: 1.1; }
+.main-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: #F2C94C!important; text-transform: uppercase; line-height: 1.1; }
 .sub-title { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.75rem; color: var(--tolima-secondary); text-transform: uppercase; margin-top: 2px; }
 .header-info { display: flex; align-items: center; gap: 20px; }
 .system-status { display: flex; align-items: center; gap: 8px; background: rgba(216, 213, 27, 0.1); padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: var(--tolima-primary-dark); border: 1px solid rgba(216, 27, 96, 0.2); }
