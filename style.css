@@ -7,11 +7,11 @@
     --tolima-primary-pale: #FFFCF2;    /* Amarillo pálido para el fondo del input */
     --tolima-secondary: ‎#D4AB27;       /* Color secundario */
     
-    --bg-body: #fafaf5;                /* Fondo general con un levísimo toque cálido */
+    --bg-body: #F8F9FA;                /* Fondo general con un levísimo toque cálido */
     --surface: #ffffff;
-    --text-primary: #dfce3a;           /* Texto oscuro con tinte amarrillo/cafe */
-    --text-secondary: #e0e057;
-    --border-color: #e2e0d4;
+    --text-primary: #1A1A1A;           /* Texto oscuro con tinte amarrillo/cafe */
+    --text-secondary: #475569;
+    --border-color: #E2E8F0;
     
     --shadow-md: 0 4px 6px -1px rgba(192, 192, 16, 0.1), 0 2px 4px -1px rgba(173, 147, 20, 0.06);
     --shadow-header: 0 4px 20px rgba(216, 188, 27, 0.15);
@@ -27,7 +27,7 @@ body, html {
 
 /* HEADER */
 .app-header {
-    height: 72px; background: #fcfce8; display: flex; align-items: center; justify-content: space-between;
+    height: 72px; background: #fff; display: flex; align-items: center; justify-content: space-between;
     padding: 0 24px; box-shadow: var(--shadow-header); z-index: 50; position: relative; border-bottom: 3px solid var(--tolima-accent);
 }
 .branding { display: flex; align-items: center; gap: 16px; }
