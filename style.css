@@ -1,11 +1,11 @@
 :root {
     /* Nueva Paleta de Cultura (Tonos Rosados/Magenta) */
     --tolima-primary: #F2C94C;         /* Amarillo vibrante principal */
-    --tolima-primary-dark: ‎#D4AB27;    /* Amarillo oscuro para bordes/sombras */
+    --tolima-primary-dark: #D4AB27;    /* Amarillo oscuro para bordes/sombras */
     --tolima-accent: #F2C94C;          /* Acento principal */
     --tolima-accent-light: #FEF9E7;    /* Amarillo muy claro para fondos de mensajes */
     --tolima-primary-pale: #FFFCF2;    /* Amarillo pálido para el fondo del input */
-    --tolima-secondary: ‎#D4AB27;       /* Color secundario */
+    --tolima-secondary: #D4AB27;       /* Color secundario */
     
     --bg-body: #F8F9FA;                /* Fondo general con un levísimo toque cálido */
     --surface: #ffffff;
